@@ -96,3 +96,6 @@ Jangan anggap URL khusus sebagai pengamanan. Hak admin tetap diperiksa melalui S
 
 ## Pembaruan responsive unisex v5
 Semua halaman pengguna memuat `css/responsive-unisex.css` paling akhir. Ikon fitur memakai SVG outline lokal dari `js/icons.js` tanpa emoji. Periksa mobile pada lebar 320, 375, 390, 430 px.
+
+### Pembaruan mobile v6
+Memperbaiki tinggi tombol CTA pada HP; mengganti ikon panah dekoratif dengan SVG outline melalui `js/icons.js`. Style tambahan: `css/cta-mobile-fix.css`. Tidak mengubah backend atau kredensial Supabase.
