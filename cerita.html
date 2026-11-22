@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/favicon.png"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta
+      content="Tulis cerita anonim di HEAL SPACE by HEAL BOARD tanpa membuat akun."
+      name="description"
+    />
+    <title>Tulis Ceritamu | HEAL SPACE</title>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/reference-design.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="container">
+      <nav class="topbar">
+        <a class="brand" href="/index.html"
+          ><span class="brand-mark">♡</span
+          ><span>HEAL SPACE<small>BY HEAL BOARD</small></span></a
+        ><button
+          aria-expanded="false"
+          aria-label="Buka menu"
+          class="nav-toggle"
+          id="nav-toggle"
+        >
+          ☰
+        </button>
+        <div class="navlinks" id="navlinks">
+          <a href="/index.html">Beranda</a><a href="/tentang.html">Tentang</a
+          ><a href="/index.html#topik">Topik Cerita</a
+          ><a href="/cek-cerita.html">Cek Cerita</a
+          ><a class="btn btn-primary" href="/cerita.html">Mulai Cerita ↗</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="page-hero">
+        <span class="kicker">Ruang cerita</span>
+        <h1>Apa yang ingin kamu ceritakan?</h1>
+        <p>
+          Kamu bebas bercerita tanpa menyebutkan nama asli. Tulis perlahan,
+          sesuai kenyamananmu.
+        </p>
+      </section>
+      <div class="content-layout">
+        <section class="panel">
+          <form id="story-form">
+            <h2>Tulis Ceritamu</h2>
+            <p class="sub">
+              Cerita maksimal 3.000 karakter. Hindari mencantumkan informasi
+              identitas yang tidak perlu.
+            </p>
+            <div class="field">
+              <label for="category">Topik Cerita *</label
+              ><select class="select" id="category" required="">
+                <option>Memuat kategori...</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="title"
+                >Judul Cerita <span class="muted">(opsional)</span></label
+              ><input
+                class="input"
+                id="title"
+                maxlength="160"
+                placeholder="Contoh: Hari-hari yang terasa berat"
+                type="text"
+              />
+            </div>
+            <div class="optional-profile">
+              <div class="optional-profile-intro">
+                <h3>
+                  Data Pencerita <span class="optional-pill">Opsional</span>
+                </h3>
+                <p class="mini">
+                  Boleh diisi atau dilewati. Ceritamu tetap anonim.
+                </p>
+              </div>
+              <div class="optional-profile-grid">
+                <div class="field">
+                  <label for="story-age"
+                    >Usia <span class="muted">(opsional)</span></label
+                  ><input
+                    class="input"
+                    id="story-age"
+                    inputmode="numeric"
+                    max="120"
+                    min="5"
+                    placeholder="Contoh: 20"
+                    type="number"
+                  />
+                  <p class="mini">
+                    Kosongkan jika tidak ingin menyebutkan usia.
+                  </p>
+                </div>
+                <div class="field">
+                  <label for="story-gender"
+                    >Jenis Kelamin <span class="muted">(opsional)</span></label
+                  ><select class="select" id="story-gender">
+                    <option value="">Tidak ingin menyebutkan</option>
+                    <option value="laki-laki">Laki-laki</option>
+                    <option value="perempuan">Perempuan</option>
+                    <option value="lainnya">Lainnya</option>
+                  </select>
+                  <p class="mini">Tidak memengaruhi pengiriman cerita.</p>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="content">Ceritamu *</label
+              ><textarea
+                class="textarea"
+                id="content"
+                maxlength="3000"
+                minlength="10"
+                placeholder="Halo, aku ingin cerita tentang..."
+                required=""
+              ></textarea>
+              <div class="field-note" id="counter">0 / 3000 karakter</div>
+            </div>
+            <div class="field">
+              <label
+                style="
+                  display: flex;
+                  gap: 10px;
+                  align-items: flex-start;
+                  font-weight: 500;
+                "
+                ><input
+                  id="privacy"
+                  required=""
+                  style="margin-top: 5px"
+                  type="checkbox"
+                />
+                <span
+                  >Saya memahami
+                  <a
+                    href="/tentang.html"
+                    style="text-decoration: underline; color: #2e6c9a"
+                    >informasi privasi dan batas layanan</a
+                  >. Saya memahami bahwa ini bukan layanan bantuan
+                  darurat.</span
+                ></label
+              >
+            </div>
+            <p class="status info" hidden="" id="story-status" role="alert"></p>
+            <button
+              class="btn btn-primary btn-block"
+              id="story-submit"
+              type="submit"
+            >
+              Kirim Ceritaku ↗
+            </button>
+          </form>
+          <div class="hidden" id="story-success">
+            <span class="kicker">Cerita terkirim</span>
+            <h2>Terima kasih sudah bercerita.</h2>
+            <p class="muted">
+              Simpan <strong>kedua informasi</strong> berikut. Kamu
+              memerlukannya untuk membaca balasan admin. Kode rahasia singkat
+              ini hanya ditampilkan sekarang.
+            </p>
+            <div class="code-card">
+              <strong>ID Cerita (contoh: CRT-1)</strong>
+              <div class="code" id="story-id"></div>
+              <strong>Kode Akses Rahasia</strong>
+              <div class="code" id="story-code"></div>
+              <div class="split">
+                <button class="btn btn-primary" id="copy-access" type="button">
+                  Salin ID dan Kode</button
+                ><a class="btn btn-light" href="/cek-cerita.html"
+                  >Buka Cek Cerita →</a
+                >
+              </div>
+            </div>
+            <p class="mini">
+              Jangan bagikan kode akses. Jika kode hilang, cerita tidak dapat
+              dibuka kembali melalui layanan mandiri.
+            </p>
+          </div>
+        </section>
+        <aside>
+          <div class="hint">
+            <strong>♡ Ceritamu penting</strong>Kamu tidak perlu menuliskan nama,
+            nomor telepon, alamat, atau detail identitas orang lain.
+          </div>
+          <div class="hint">
+            <strong>♢ Privasi dan keamanan</strong>Admin berwenang dapat membaca
+            cerita untuk memberikan tanggapan. Kode akses bukan jaminan
+            kerahasiaan mutlak jika dibagikan kepada orang lain.
+          </div>
+          <div class="hint">
+            <strong>! Perlu bantuan segera?</strong>Jika kamu atau orang lain
+            berada dalam bahaya langsung, hubungi layanan darurat setempat atau
+            orang tepercaya. Website ini tidak memantau keadaan darurat secara
+            langsung.
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="container footer">
+      <div>HEAL SPACE by HEAL BOARD</div>
+      <a href="/tentang.html">Informasi layanan</a>
+    </footer>
+    <script src="/js/cerita.js" type="module"></script>
+  </body>
+</html>

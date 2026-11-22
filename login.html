@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/favicon.png"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Login Admin | HEAL SPACE</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/reference-design.css" />
+  </head>
+  <body>
+    <header class="container">
+      <nav class="topbar">
+        <a class="brand" href="/index.html"
+          ><span class="brand-mark">♡</span
+          ><span>HEAL SPACE<small>BY HEAL BOARD</small></span></a
+        ><a href="/index.html" class="btn btn-light">← Kembali ke Beranda</a>
+      </nav>
+    </header>
+    <main class="container login-wrap">
+      <section class="login-card">
+        <div class="login-mark">✧</div>
+        <h1>Selamat datang kembali.</h1>
+        <p>
+          Masuk menggunakan akun admin HEAL SPACE yang sudah terdaftar di
+          Supabase Auth.
+        </p>
+        <form id="login-form">
+          <div class="field">
+            <label for="email">Email Admin</label
+            ><input
+              id="email"
+              class="input"
+              type="email"
+              autocomplete="username"
+              required
+              placeholder="Email admin"
+            />
+          </div>
+          <div class="field">
+            <label for="password">Password</label
+            ><input
+              id="password"
+              class="input"
+              type="password"
+              autocomplete="current-password"
+              required
+              placeholder="Password admin"
+            />
+          </div>
+          <p class="status info" hidden id="login-status" role="alert"></p>
+          <button
+            type="submit"
+            id="login-submit"
+            class="btn btn-primary btn-block"
+          >
+            Masuk ke Dashboard →
+          </button>
+        </form>
+        <p class="mini" style="margin-top: 22px">
+          Halaman ini hanya untuk pengelola yang diberi izin.
+        </p>
+      </section>
+    </main>
+    <script type="module" src="/js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/favicon.png"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta content="noindex,nofollow" name="robots" />
+    <title>Dashboard Admin | HEAL SPACE</title>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/reference-design.css" rel="stylesheet" />
+  </head>
+  <body class="admin-body">
+    <div class="admin-mobile-head">
+      <a href="/admin/dashboard"><strong>✧ HEAL SPACE</strong></a
+      ><a href="/index.html">Lihat Website ↗</a>
+    </div>
+    <div class="admin-app">
+      <aside class="sidebar">
+        <a class="brand" href="/admin/dashboard"
+          ><span class="brand-mark">♡</span
+          ><span>HEAL SPACE<small>BY HEAL BOARD</small></span></a
+        >
+        <div class="sidebar-person">
+          <img alt="Avatar admin" src="/assets/admin-avatar.png" /><strong
+            >Admin</strong
+          ><span id="sidebar-user">HEAL SPACE <i class="online-dot"></i></span>
+        </div>
+        <nav aria-label="Menu admin" class="sidebar-links">
+          <a class="active" data-view="dashboard" href="#dashboard"
+            >⌂  Dashboard</a
+          ><a data-view="stories" href="#stories">▣  Cerita Masuk</a
+          ><a data-view="history" href="#history">◷  Riwayat Cerita</a
+          ><a data-view="categories" href="#categories">▦  Kategori</a
+          ><a data-view="reports" href="#reports">▥  Laporan</a
+          ><a data-view="accounts" href="#accounts">♧ Manajemen Akun</a
+          ><a href="/index.html" rel="noopener noreferrer" target="_blank"
+            >⚙  Lihat Website</a
+          >
+        </nav>
+        <div class="side-footer">
+          <div class="side-help-icon">☏</div>
+          <strong>Pusat Bantuan</strong>
+          <div>Butuh bantuan?<br />Hubungi pengelola sistem.</div>
+          <a class="side-help-button" href="/tentang.html">Lihat Informasi →</a>
+        </div>
+      </aside>
+      <main class="admin-main" id="admin-content">
+        <header class="admin-top">
+          <div>
+            <h1>Dashboard Admin</h1>
+            <p>Ringkasan aktivitas cerita di HEAL SPACE</p>
+            <span class="hidden" id="admin-identity"></span>
+          </div>
+          <div class="admin-top-right">
+            <div class="search-shell">
+              ⌕
+              <input
+                aria-label="Cari cerita"
+                id="admin-search"
+                placeholder="Cari cerita, kategori, atau kode..."
+                type="search"
+              />
+            </div>
+            <button
+              aria-label="Lihat cerita baru"
+              class="icon-action"
+              id="notif-button"
+              title="Cerita baru"
+              type="button"
+            >
+              ♧<span class="notif-dot"></span></button
+            ><button
+              aria-label="Keluar"
+              class="icon-action"
+              id="logout"
+              title="Keluar"
+              type="button"
+            >
+              ⇥
+            </button>
+          </div>
+        </header>
+        <div class="admin-view" id="dashboard-view">
+          <div class="admin-hero">
+            <div class="admin-banner-text">
+              <h2>Selamat Datang di<br /><b>HEAL SPACE</b></h2>
+              <span>by HEAL BOARD</span>
+              <p>
+                Kelola, tanggapi, dan dampingi setiap cerita dengan empati dan
+                kerahasiaan.
+              </p>
+              <a class="btn btn-primary" href="#stories">Lihat Cerita Baru →</a>
+            </div>
+            <div aria-hidden="true" class="admin-symbol admin-symbol-photo">
+              <img alt="" src="/assets/heal-space-admin.webp" />
+            </div>
+          </div>
+          <p class="status info" hidden="" id="admin-status" role="alert"></p>
+          <section class="stats">
+            <div class="stat">
+              <div class="stat-icon">✉</div>
+              <div>
+                <span>Total Cerita</span><strong id="total">–</strong
+                ><small>Seluruh cerita masuk</small>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-icon">▣</div>
+              <div>
+                <span>Cerita Baru</span><strong id="baru">–</strong
+                ><small>Menunggu tanggapan</small>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-icon">⌛</div>
+              <div>
+                <span>Diproses</span><strong id="diproses">–</strong
+                ><small>Sedang ditangani</small>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-icon">✓</div>
+              <div>
+                <span>Selesai</span><strong id="selesai">–</strong
+                ><small>Sudah ditangani</small>
+              </div>
+            </div>
+          </section>
+          <section class="analytics-grid">
+            <section class="panel analytics-panel" id="category-panel">
+              <div class="panel-head">
+                <h3>Statistik Cerita per Kategori</h3>
+                <span class="soft-pill">Semua Waktu ⌄</span>
+              </div>
+              <div class="donut-layout">
+                <div class="donut-chart" id="donut-chart">
+                  <div class="donut-inner">
+                    <strong id="donut-total">0</strong><span>Cerita</span>
+                  </div>
+                </div>
+                <div class="legend-list" id="category-chart"></div>
+              </div>
+            </section>
+            <section class="panel analytics-panel" id="trend-panel">
+              <div class="panel-head">
+                <h3>Tren Cerita Masuk</h3>
+                <span class="soft-pill">7 Hari Terakhir</span>
+              </div>
+              <div class="weekly-chart" id="weekly-chart">
+                <span class="mini">Memuat tren...</span>
+              </div>
+            </section>
+          </section>
+          <section class="bottom-admin-grid">
+            <section class="panel latest-panel" id="stories">
+              <div class="admin-toolbar">
+                <div>
+                  <h3>Cerita Terbaru</h3>
+                  <div class="mini" id="story-count">Memuat...</div>
+                </div>
+                <div class="split">
+                  <select
+                    aria-label="Filter status"
+                    class="select"
+                    id="filter-status"
+                  >
+                    <option value="">Semua Status</option>
+                    <option value="baru">Baru</option>
+                    <option value="diproses">Diproses</option>
+                    <option value="selesai">Selesai</option></select
+                  ><button
+                    class="btn btn-outline"
+                    id="refresh-admin"
+                    type="button"
+                  >
+                    Segarkan
+                  </button>
+                </div>
+              </div>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Kode Cerita</th>
+                      <th>Kategori</th>
+                      <th>Status</th>
+                      <th>Dikirim</th>
+                    </tr>
+                  </thead>
+                  <tbody id="story-table">
+                    <tr>
+                      <td colspan="4">Memuat...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section class="panel activities-panel">
+              <div class="panel-head">
+                <h3>Aktivitas Terbaru</h3>
+                <span class="activity-bell">♧</span>
+              </div>
+              <div class="activity-stack" id="recent-activity">
+                <div class="activity-row">
+                  Menampilkan aktivitas berdasarkan cerita masuk
+                </div>
+              </div>
+              <div class="activity-note">
+                ♢   Jaga selalu kerahasiaan dan etika saat menanggapi setiap
+                cerita.
+              </div>
+            </section>
+          </section>
+        </div>
+        <section class="panel admin-view hidden" id="stories-view">
+          <div class="admin-page-title">
+            <div>
+              <span class="kicker">Kelola cerita</span>
+              <h2>Cerita Masuk</h2>
+              <p class="mini">
+                Buka cerita untuk membaca dan membalas pengguna secara pribadi.
+              </p>
+            </div>
+            <div class="admin-page-actions">
+              <select
+                aria-label="Filter cerita"
+                class="select"
+                id="inbox-filter"
+              >
+                <option value="">Semua Status</option>
+                <option value="baru">Baru</option>
+                <option value="diproses">Diproses</option>
+                <option value="selesai">Selesai</option></select
+              ><button class="btn btn-outline" id="inbox-refresh" type="button">
+                Segarkan
+              </button>
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID Cerita</th>
+                  <th>Judul</th>
+                  <th>Kategori</th>
+                  <th>Status</th>
+                  <th>Waktu</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="inbox-table">
+                <tr>
+                  <td colspan="6">Memuat cerita...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mini" id="inbox-count"></p>
+        </section>
+        <section class="panel admin-view hidden" id="history-view">
+          <div class="admin-page-title">
+            <div>
+              <span class="kicker">Riwayat penanganan</span>
+              <h2>Riwayat Cerita</h2>
+              <p class="mini">Cerita yang pernah diproses atau diselesaikan.</p>
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>ID Cerita</th>
+                  <th>Judul</th>
+                  <th>Kategori</th>
+                  <th>Status</th>
+                  <th>Dikirim</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="history-table">
+                <tr>
+                  <td colspan="6">Memuat riwayat...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="admin-view hidden" id="categories-view">
+          <div class="admin-page-title">
+            <div>
+              <span class="kicker">Pengaturan kategori</span>
+              <h2>Kategori Cerita</h2>
+              <p class="mini">
+                Tambah, ubah, aktifkan, atau nonaktifkan kategori untuk
+                pengguna.
+              </p>
+            </div>
+          </div>
+          <div class="admin-settings-grid">
+            <section class="panel">
+              <h3>Daftar Kategori</h3>
+              <div class="category-admin-list" id="category-list"></div>
+            </section>
+            <section class="panel">
+              <h3 id="category-form-title">Tambah Kategori</h3>
+              <form id="category-form">
+                <input id="category-edit-id" type="hidden" />
+                <div class="field">
+                  <label for="category-name">Nama Kategori</label
+                  ><input
+                    class="input"
+                    id="category-name"
+                    maxlength="90"
+                    placeholder="Contoh: Masalah Sekolah"
+                    required=""
+                  />
+                </div>
+                <div class="field">
+                  <label for="category-description">Deskripsi</label
+                  ><textarea
+                    class="textarea"
+                    id="category-description"
+                    maxlength="500"
+                    placeholder="Penjelasan singkat"
+                  ></textarea>
+                </div>
+                <div class="field">
+                  <label for="category-order">Urutan</label
+                  ><input
+                    class="input"
+                    id="category-order"
+                    max="999"
+                    min="0"
+                    type="number"
+                    value="10"
+                  />
+                </div>
+                <label class="admin-checkbox"
+                  ><input checked="" id="category-active" type="checkbox" />
+                  Aktif dan muncul di halaman pengguna</label
+                >
+                <div class="split" style="margin-top: 20px">
+                  <button class="btn btn-primary" type="submit">
+                    Simpan Kategori</button
+                  ><button
+                    class="btn btn-outline"
+                    id="category-cancel"
+                    type="button"
+                  >
+                    Batal
+                  </button>
+                </div>
+              </form>
+              <p
+                class="status info"
+                hidden=""
+                id="category-message"
+                role="status"
+              ></p>
+            </section>
+          </div>
+        </section>
+        <section class="admin-view hidden" id="reports-view">
+          <div class="admin-page-title">
+            <div>
+              <span class="kicker">Analisis cerita</span>
+              <h2>Laporan</h2>
+              <p class="mini">
+                Ringkasan berdasarkan data yang tersedia di Supabase.
+              </p>
+            </div>
+            <button class="btn btn-outline" id="report-export" type="button">
+              Unduh CSV
+            </button>
+          </div>
+          <div class="report-cards" id="report-summary"></div>
+          <section class="panel">
+            <h3>Jumlah Cerita per Kategori</h3>
+            <div class="report-bars" id="report-categories"></div>
+            <p class="mini" style="margin-top: 18px">
+              Laporan ini hanya menampilkan metadata dan jumlah cerita, bukan
+              isi pesan pribadi.
+            </p>
+          </section>
+        </section>
+        <section class="admin-view hidden" id="accounts-view">
+          <div class="admin-page-title">
+            <div>
+              <span class="kicker">Pengelolaan akses</span>
+              <h2>Manajemen Akun Admin</h2>
+              <p class="mini">
+                Tambahkan administrator baru agar dapat mengelola cerita. Hanya
+                admin yang sudah login yang bisa membuat akun.
+              </p>
+            </div>
+          </div>
+          <div class="admin-settings-grid">
+            <section class="panel">
+              <div class="admin-page-title">
+                <h3>Daftar Akun Admin</h3>
+                <button
+                  class="btn btn-outline"
+                  id="accounts-refresh"
+                  type="button"
+                >
+                  Segarkan
+                </button>
+              </div>
+              <div class="account-list" id="account-list">
+                <p class="mini">Memuat daftar admin...</p>
+              </div>
+            </section>
+            <section class="panel">
+              <h3>Tambah Akun Admin</h3>
+              <p class="mini">
+                Akun baru mendapatkan akses membaca dan membalas cerita. Buat
+                hanya untuk petugas yang dipercaya.
+              </p>
+              <form autocomplete="off" id="admin-account-form">
+                <div class="field">
+                  <label for="new-admin-name">Nama Admin *</label
+                  ><input
+                    autocomplete="off"
+                    class="input"
+                    id="new-admin-name"
+                    maxlength="120"
+                    minlength="2"
+                    placeholder="Nama administrator"
+                    required=""
+                  />
+                </div>
+                <div class="field">
+                  <label for="new-admin-email">Email *</label
+                  ><input
+                    autocomplete="off"
+                    class="input"
+                    id="new-admin-email"
+                    maxlength="254"
+                    placeholder="admin@example.com"
+                    required=""
+                    type="email"
+                  />
+                </div>
+                <div class="field">
+                  <label for="new-admin-password">Password Awal *</label>
+                  <div class="password-input-row">
+                    <input
+                      autocomplete="new-password"
+                      class="input"
+                      id="new-admin-password"
+                      maxlength="128"
+                      minlength="12"
+                      placeholder="Min. 12 karakter"
+                      required=""
+                      type="password"
+                    /><button
+                      aria-label="Tampilkan password"
+                      class="btn btn-light"
+                      id="admin-toggle-password"
+                      type="button"
+                    >
+                      Lihat
+                    </button>
+                  </div>
+                  <p class="mini">
+                    Minimal 12 karakter, berisi huruf besar, kecil, dan angka.
+                    Bagikan password melalui saluran pribadi yang aman.
+                  </p>
+                </div>
+                <p
+                  class="status info"
+                  hidden=""
+                  id="account-status"
+                  role="status"
+                ></p>
+                <button
+                  class="btn btn-primary"
+                  id="admin-account-submit"
+                  type="submit"
+                >
+                  + Tambah Akun Admin
+                </button>
+              </form>
+            </section>
+          </div>
+        </section>
+        <section
+          class="panel admin-view hidden"
+          id="admin-detail"
+          style="margin-top: 20px"
+        >
+          <div class="story-head">
+            <div>
+              <span class="kicker">Detail dan balasan</span>
+              <h2 id="admin-detail-title">Cerita</h2>
+              <p class="mini" id="admin-detail-id"></p>
+            </div>
+            <button class="btn btn-light" id="close-detail" type="button">
+              Tutup
+            </button>
+          </div>
+          <p class="mini" style="margin: 15px 0">
+            Kategori: <strong id="admin-detail-category"></strong>
+          </p>
+          <p class="mini" style="margin: 7px 0 15px">
+            Usia: <strong id="admin-detail-age">Tidak diisi</strong>  ·  Jenis
+            kelamin: <strong id="admin-detail-gender">Tidak diisi</strong>
+          </p>
+          <div class="story-original" id="admin-original"></div>
+          <div class="note-separator"></div>
+          <div class="story-head">
+            <h3>Percakapan Dua Arah</h3>
+            <div class="split">
+              <select
+                aria-label="Status cerita"
+                class="select"
+                id="admin-detail-status"
+              >
+                <option value="baru">Baru</option>
+                <option value="diproses">Diproses</option>
+                <option value="selesai">Selesai</option></select
+              ><button class="btn btn-outline" id="status-save" type="button">
+                Simpan Status
+              </button>
+            </div>
+          </div>
+          <div class="chat" id="admin-messages"></div>
+          <form id="admin-reply-form">
+            <div class="field">
+              <label for="admin-reply-text">Balasan untuk Pengguna</label
+              ><textarea
+                class="textarea"
+                id="admin-reply-text"
+                maxlength="3000"
+                minlength="1"
+                placeholder="Tulis tanggapan yang empatik dan tidak menghakimi..."
+                required=""
+              ></textarea>
+            </div>
+            <button
+              class="btn btn-primary"
+              id="admin-reply-submit"
+              type="submit"
+            >
+              Kirim Balasan ↗
+            </button>
+          </form>
+          <p
+            class="status info"
+            hidden=""
+            id="admin-reply-status"
+            role="status"
+          ></p>
+        </section>
+        <p class="mini" style="margin-top: 26px">
+          Jaga kerahasiaan cerita. Jangan menyalin atau menyebarkan pesan
+          pribadi pengguna.
+        </p>
+      </main>
+    </div>
+    <script src="/js/admin.js" type="module"></script>
+  </body>
+</html>

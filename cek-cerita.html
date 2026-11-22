@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/favicon.png"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Cek status dan balasan cerita anonim di HEAL SPACE menggunakan ID cerita dan kode akses."
+    />
+    <title>Cek Ceritamu | HEAL SPACE</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/reference-design.css" />
+  </head>
+  <body>
+    <header class="container">
+      <nav class="topbar">
+        <a class="brand" href="/index.html"
+          ><span class="brand-mark">♡</span
+          ><span>HEAL SPACE<small>BY HEAL BOARD</small></span></a
+        ><button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Buka menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        <div class="navlinks" id="navlinks">
+          <a href="/index.html">Beranda</a><a href="/tentang.html">Tentang</a
+          ><a href="/index.html#topik">Topik Cerita</a
+          ><a class="active" href="/cek-cerita.html">Cek Cerita</a
+          ><a class="btn btn-primary" href="/cerita.html">Mulai Cerita ↗</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="page-hero">
+        <span class="kicker">Lanjutkan percakapan</span>
+        <h1>Selamat datang kembali.</h1>
+        <p>
+          Masukkan ID singkat (contoh CRT-1) dan kode akses untuk melihat
+          balasan atau melanjutkan percakapan dengan admin.
+        </p>
+      </section>
+      <div class="content-layout">
+        <div>
+          <section class="panel">
+            <h2>Buka Ceritamu</h2>
+            <p class="sub">
+              Gunakan ID cerita dan kode akses yang kamu simpan. Kode baru
+              terdiri dari 12 karakter dalam 3 kelompok. Kode lama tetap bisa
+              digunakan.
+            </p>
+            <form id="check-form">
+              <div class="field">
+                <label for="story-id-input">ID Cerita</label
+                ><input
+                  id="story-id-input"
+                  class="input"
+                  type="text"
+                  autocomplete="off"
+                  required
+                  placeholder="Contoh: CRT-1"
+                />
+              </div>
+              <div class="field">
+                <label for="code-input">Kode Akses Rahasia</label
+                ><input
+                  id="code-input"
+                  class="input"
+                  type="password"
+                  autocomplete="off"
+                  spellcheck="false"
+                  required
+                  placeholder="Contoh: K7MX-P2Q9-W4TR"
+                  maxlength="80"
+                  autocapitalize="characters"
+                />
+              </div>
+              <p id="check-status" class="status info" hidden role="alert"></p>
+              <button
+                class="btn btn-primary btn-block"
+                type="submit"
+                id="check-submit"
+              >
+                Buka Ceritaku →
+              </button>
+            </form>
+          </section>
+          <section
+            class="panel hidden"
+            id="story-detail"
+            style="margin-top: 20px"
+          >
+            <div class="story-head">
+              <div>
+                <h2 id="detail-title">Ceritamu</h2>
+                <p class="mini" id="detail-category"></p>
+              </div>
+              <span id="detail-status" class="badge">Baru</span>
+            </div>
+            <div class="note-separator"></div>
+            <div class="story-original" id="detail-content"></div>
+            <div class="note-separator"></div>
+            <div class="story-head">
+              <h3>Percakapan</h3>
+              <button type="button" class="btn btn-light" id="refresh">
+                Muat Ulang ↻
+              </button>
+            </div>
+            <div class="chat" id="messages"></div>
+            <form id="reply-form">
+              <div class="field">
+                <label for="reply-text">Balas Admin</label
+                ><textarea
+                  class="textarea"
+                  id="reply-text"
+                  minlength="1"
+                  maxlength="3000"
+                  required
+                  placeholder="Tulis balasanmu..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" id="reply-submit">
+                Kirim Balasan ↗
+              </button>
+            </form>
+            <p id="closed-note" class="hint hidden">
+              Percakapan ini sudah ditandai selesai. Balasan baru dinonaktifkan.
+            </p>
+            <p id="reply-status" class="status info" hidden role="status"></p>
+          </section>
+        </div>
+        <aside>
+          <div class="hint">
+            <strong>♢ Jaga kode aksesmu</strong>Kode akses diperlukan setiap
+            kali kamu membuka cerita di halaman baru atau browser lain.
+          </div>
+          <div class="hint">
+            <strong>♡ Balasan admin</strong>Balasan tidak selalu tersedia secara
+            langsung. Gunakan tombol Muat Ulang untuk memeriksa pesan baru.
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="container footer">
+      <div>HEAL SPACE by HEAL BOARD</div>
+      <a href="/tentang.html">Privasi & batas layanan</a>
+    </footer>
+    <script type="module" src="/js/cek.js"></script>
+  </body>
+</html>
