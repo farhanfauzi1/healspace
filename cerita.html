@@ -22,21 +22,21 @@
     <title>Tulis Ceritamu | HEAL SPACE</title>
     <link href="/css/style.css" rel="stylesheet" />
     <link href="/css/reference-design.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/responsive-unisex.css?v=5" />
   </head>
   <body>
     <header class="container">
       <nav class="topbar">
         <a class="brand" href="/index.html"
-          ><span class="brand-mark">♡</span
+          ><span class="brand-mark" data-ui-icon="heart"></span
           ><span>HEAL SPACE<small>BY HEAL BOARD</small></span></a
         ><button
           aria-expanded="false"
           aria-label="Buka menu"
           class="nav-toggle"
           id="nav-toggle"
-        >
-          ☰
-        </button>
+          data-ui-icon="menu"
+        ></button>
         <div class="navlinks" id="navlinks">
           <a href="/index.html">Beranda</a><a href="/tentang.html">Tentang</a
           ><a href="/index.html#topik">Topik Cerita</a
@@ -193,11 +193,11 @@
         </section>
         <aside>
           <div class="hint">
-            <strong>♡ Ceritamu penting</strong>Kamu tidak perlu menuliskan nama,
+            <strong>Ceritamu penting</strong>Kamu tidak perlu menuliskan nama,
             nomor telepon, alamat, atau detail identitas orang lain.
           </div>
           <div class="hint">
-            <strong>♢ Privasi dan keamanan</strong>Admin berwenang dapat membaca
+            <strong>Privasi dan keamanan</strong>Admin berwenang dapat membaca
             cerita untuk memberikan tanggapan. Kode akses bukan jaminan
             kerahasiaan mutlak jika dibagikan kepada orang lain.
           </div>
@@ -215,5 +215,6 @@
       <a href="/tentang.html">Informasi layanan</a>
     </footer>
     <script src="/js/cerita.js" type="module"></script>
+    <script type="module" src="/js/icons.js"></script>
   </body>
 </html>

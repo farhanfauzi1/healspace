@@ -19,16 +19,18 @@
     <title>Dashboard Admin | HEAL SPACE</title>
     <link href="/css/style.css" rel="stylesheet" />
     <link href="/css/reference-design.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/mobile-fix.css?v=2" />
+    <link rel="stylesheet" href="/css/responsive-unisex.css?v=5" />
   </head>
   <body class="admin-body">
     <div class="admin-mobile-head">
-      <a href="/admin/dashboard"><strong>✧ HEAL SPACE</strong></a
+      <a href="/admin/dashboard"><strong>HEAL SPACE</strong></a
       ><a href="/index.html">Lihat Website ↗</a>
     </div>
     <div class="admin-app">
       <aside class="sidebar">
         <a class="brand" href="/admin/dashboard"
-          ><span class="brand-mark">♡</span
+          ><span class="brand-mark" data-ui-icon="heart"></span
           ><span>HEAL SPACE<small>BY HEAL BOARD</small></span></a
         >
         <div class="sidebar-person">
@@ -38,14 +40,22 @@
         </div>
         <nav aria-label="Menu admin" class="sidebar-links">
           <a class="active" data-view="dashboard" href="#dashboard"
-            >⌂  Dashboard</a
-          ><a data-view="stories" href="#stories">▣  Cerita Masuk</a
-          ><a data-view="history" href="#history">◷  Riwayat Cerita</a
-          ><a data-view="categories" href="#categories">▦  Kategori</a
-          ><a data-view="reports" href="#reports">▥  Laporan</a
-          ><a data-view="accounts" href="#accounts">♧ Manajemen Akun</a
+            ><span class="nav-icon" data-ui-icon="home"></span> Dashboard</a
+          ><a data-view="stories" href="#stories"
+            ><span class="nav-icon" data-ui-icon="inbox"></span> Cerita Masuk</a
+          ><a data-view="history" href="#history"
+            ><span class="nav-icon" data-ui-icon="clock"></span> Riwayat
+            Cerita</a
+          ><a data-view="categories" href="#categories"
+            ><span class="nav-icon" data-ui-icon="grid"></span> Kategori</a
+          ><a data-view="reports" href="#reports"
+            ><span class="nav-icon" data-ui-icon="chart"></span> Laporan</a
+          ><a data-view="accounts" href="#accounts"
+            ><span class="nav-icon" data-ui-icon="users"></span> Manajemen
+            Akun</a
           ><a href="/index.html" rel="noopener noreferrer" target="_blank"
-            >⚙  Lihat Website</a
+            ><span class="nav-icon" data-ui-icon="external"></span> Lihat
+            Website</a
           >
         </nav>
         <div class="side-footer">
@@ -109,28 +119,28 @@
           <p class="status info" hidden="" id="admin-status" role="alert"></p>
           <section class="stats">
             <div class="stat">
-              <div class="stat-icon">✉</div>
+              <div class="stat-icon" data-ui-icon="mail"></div>
               <div>
                 <span>Total Cerita</span><strong id="total">–</strong
                 ><small>Seluruh cerita masuk</small>
               </div>
             </div>
             <div class="stat">
-              <div class="stat-icon">▣</div>
+              <div class="stat-icon" data-ui-icon="inbox"></div>
               <div>
                 <span>Cerita Baru</span><strong id="baru">–</strong
                 ><small>Menunggu tanggapan</small>
               </div>
             </div>
             <div class="stat">
-              <div class="stat-icon">⌛</div>
+              <div class="stat-icon" data-ui-icon="clock"></div>
               <div>
                 <span>Diproses</span><strong id="diproses">–</strong
                 ><small>Sedang ditangani</small>
               </div>
             </div>
             <div class="stat">
-              <div class="stat-icon">✓</div>
+              <div class="stat-icon" data-ui-icon="check"></div>
               <div>
                 <span>Selesai</span><strong id="selesai">–</strong
                 ><small>Sudah ditangani</small>
@@ -570,5 +580,6 @@
       </main>
     </div>
     <script src="/js/admin.js" type="module"></script>
+    <script type="module" src="/js/icons.js"></script>
   </body>
 </html>

@@ -92,3 +92,7 @@ Deploy dengan Root Directory mengarah ke folder yang berisi `index.html` dan `ve
 **Catatan:** Rewrite di `vercel.json` hanya berlaku di Vercel. Saat menjalankan
 `python -m http.server 8080` secara lokal, akses `/login.html` dan `/admin.html`.
 Jangan anggap URL khusus sebagai pengamanan. Hak admin tetap diperiksa melalui Supabase Auth dan RLS.
+
+
+## Pembaruan responsive unisex v5
+Semua halaman pengguna memuat `css/responsive-unisex.css` paling akhir. Ikon fitur memakai SVG outline lokal dari `js/icons.js` tanpa emoji. Periksa mobile pada lebar 320, 375, 390, 430 px.

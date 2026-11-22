@@ -1,0 +1,387 @@
+/* HEAL SPACE: mobile-first admin overrides.
+   Loaded after reference-design.css to avoid older media rules overriding these. */
+.admin-body {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.admin-app,
+.admin-main,
+.admin-view,
+.analytics-grid,
+.bottom-admin-grid,
+.analytics-panel,
+.panel {
+  min-width: 0;
+}
+
+.admin-view {
+  max-width: 100%;
+}
+
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+  width: 100%;
+}
+
+.admin-body img {
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .admin-body {
+    background: #f0f6ff;
+  }
+
+  .admin-mobile-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 17px;
+    min-height: 60px;
+    background: #194675;
+    color: #fff;
+    font-size: .88rem;
+  }
+
+  .admin-mobile-head a {
+    min-width: 0;
+  }
+
+  .admin-app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar {
+    display: block !important;
+    width: 100%;
+    min-height: 0;
+    padding: 10px 12px 12px;
+    border-radius: 0;
+    box-shadow: none;
+    background: linear-gradient(125deg, #2f669d, #153861);
+  }
+
+  .sidebar>.brand,
+  .sidebar-person,
+  .side-footer {
+    display: none !important;
+  }
+
+  .sidebar-links {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    margin: 0;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .sidebar-links a {
+    min-width: 0;
+    min-height: 41px;
+    padding: 9px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+    font-size: clamp(.65rem, 2.6vw, .78rem);
+    font-weight: 700;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .sidebar-links a.active {
+    box-shadow: none;
+  }
+
+  .admin-main {
+    width: 100%;
+    min-width: 0;
+    padding: 20px 14px 48px;
+  }
+
+  .admin-top {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+
+  .admin-top>div:first-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .admin-top h1 {
+    font-size: clamp(1.35rem, 5.9vw, 1.8rem);
+  }
+
+  .admin-top p {
+    font-size: .8rem;
+    line-height: 1.5;
+  }
+
+  .admin-top-right {
+    flex: none;
+    gap: 7px;
+  }
+
+  .admin-top-right .search-shell {
+    display: none;
+  }
+
+  .icon-action {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
+  .admin-hero {
+    min-height: 0;
+    padding: 23px 21px;
+    border-radius: 24px;
+    display: block;
+    overflow: hidden;
+  }
+
+  .admin-banner-text {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .admin-hero h2 {
+    font-size: clamp(1.2rem, 5.3vw, 1.65rem);
+    line-height: 1.28;
+  }
+
+  .admin-hero h2 b {
+    font-size: 1.35em;
+  }
+
+  .admin-banner-text>span {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+
+  .admin-banner-text p {
+    font-size: .84rem;
+    line-height: 1.58;
+    max-width: 36ch;
+  }
+
+  .admin-hero .btn {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .admin-symbol-photo {
+    display: none !important;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 14px 0 20px;
+  }
+
+  .stat {
+    min-width: 0;
+    min-height: 112px;
+    padding: 13px 11px;
+    border-radius: 18px;
+    gap: 8px;
+  }
+
+  .stat-icon {
+    display: grid;
+    flex: 0 0 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .stat>div:last-child {
+    min-width: 0;
+  }
+
+  .stat span {
+    font-size: .71rem;
+    line-height: 1.3;
+  }
+
+  .stat strong {
+    font-size: clamp(1.35rem, 5.7vw, 1.8rem);
+    line-height: 1.2;
+  }
+
+  .stat small {
+    display: block;
+    font-size: .6rem;
+    line-height: 1.35;
+  }
+
+  .analytics-grid,
+  .bottom-admin-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .analytics-panel,
+  .bottom-admin-grid>.panel,
+  .admin-view.panel {
+    padding: 18px 14px;
+    border-radius: 22px;
+  }
+
+  .panel-head {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .panel-head h3,
+  .admin-toolbar h3 {
+    font-size: clamp(.96rem, 4.2vw, 1.16rem);
+    line-height: 1.3;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  .soft-pill {
+    flex: none;
+    font-size: .65rem;
+    padding: 7px 9px;
+  }
+
+  .donut-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-top: 20px;
+  }
+
+  .donut-chart {
+    flex: 0 0 auto;
+    width: 165px;
+    height: 165px;
+  }
+
+  .donut-inner {
+    width: 95px;
+    height: 95px;
+  }
+
+  .legend-list {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .legend-row {
+    font-size: .74rem;
+    grid-template-columns: 10px minmax(0, 1fr) 38px 28px;
+    gap: 8px;
+  }
+
+  .weekly-chart {
+    width: 100%;
+    padding: 12px 5px 4px;
+    gap: 4px;
+    height: 205px;
+  }
+
+  .weekly-col {
+    min-width: 0;
+  }
+
+  .weekly-bar {
+    width: 80%;
+  }
+
+  .weekly-name {
+    font-size: .63rem;
+  }
+
+  .admin-toolbar,
+  .admin-page-title {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .admin-toolbar .split,
+  .admin-page-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .admin-toolbar .select,
+  .admin-page-actions .select {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .latest-panel .data-table {
+    min-width: 440px;
+  }
+
+  .account-row {
+    flex-wrap: wrap;
+  }
+
+  .category-admin-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-admin-row>* {
+    max-width: 100%;
+  }
+
+  .admin-settings-grid,
+  .report-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media(max-width: 365px) {
+  .sidebar-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stat {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 116px;
+  }
+
+  .stat small {
+    display: none;
+  }
+
+  .admin-top {
+    gap: 7px;
+  }
+
+  .icon-action {
+    width: 35px;
+    height: 35px;
+  }
+
+  .panel-head {
+    flex-wrap: wrap;
+  }
+}

@@ -22,36 +22,34 @@
     <title>HEAL SPACE by HEAL BOARD | Ruang Cerita Anonim</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/reference-design.css" />
+    <link rel="stylesheet" href="/css/responsive-unisex.css?v=5" />
   </head>
   <body>
     <header class="container">
       <nav class="topbar">
         <a class="brand" href="/index.html"
-          ><span class="brand-mark">♡</span
+          ><span class="brand-mark" data-ui-icon="heart"></span
           ><span>HEAL SPACE<small>BY HEAL BOARD</small></span></a
         ><button
           class="nav-toggle"
           id="nav-toggle"
           aria-label="Buka menu"
           aria-expanded="false"
-        >
-          ☰
-        </button>
+          data-ui-icon="menu"
+        ></button>
         <div class="navlinks" id="navlinks">
           <a class="active" href="/index.html">Beranda</a
-          ><a href="/tentang.html">ⓘ &nbsp; Tentang Konseling</a
-          ><a href="/tentang.html#privasi">♢ &nbsp; Kerahasiaan</a
+          ><a href="/tentang.html">Tentang Konseling</a
+          ><a href="/tentang.html#privasi">Kerahasiaan</a
           ><a href="/cek-cerita.html">Cek Ceritamu</a
-          ><a href="/cerita.html" class="btn btn-primary"
-            >✎ &nbsp; Mulai Bercerita</a
-          >
+          ><a href="/cerita.html" class="btn btn-primary">Mulai Bercerita</a>
         </div>
       </nav>
     </header>
     <main class="container">
       <section class="hero hero-unisex">
         <div class="hero-content">
-          <div class="eyebrow">Ruang Aman untuk Bercerita &nbsp; ♢</div>
+          <div class="eyebrow">Ruang Aman untuk Bercerita</div>
           <h1>HEAL SPACE <span class="hero-by">by HEAL BOARD</span></h1>
           <p>
             Tempat aman dan nyaman untuk berbagi cerita, perasaan, atau masalah
@@ -59,10 +57,8 @@
           </p>
           <div class="actions">
             <a class="btn btn-primary" href="/cerita.html"
-              >✎ &nbsp; Mulai Bercerita <span aria-hidden="true">→</span></a
-            ><a class="btn btn-light" href="/cek-cerita.html"
-              >⌕ &nbsp; Cek Ceritamu</a
-            >
+              >Mulai Bercerita <span aria-hidden="true">→</span></a
+            ><a class="btn btn-light" href="/cek-cerita.html">Cek Ceritamu</a>
           </div>
         </div>
         <div class="hero-art hero-art-unisex">
@@ -75,21 +71,21 @@
       </section>
       <section class="trust-bar" aria-label="Keunggulan layanan">
         <div class="trust">
-          <span class="iconbox">♧</span>
+          <span class="iconbox" data-ui-icon="message"></span>
           <div>
             <strong>Ceritamu Aman</strong
             ><small>Setiap cerita dijaga kerahasiaannya.</small>
           </div>
         </div>
         <div class="trust">
-          <span class="iconbox">♡</span>
+          <span class="iconbox" data-ui-icon="heart"></span>
           <div>
             <strong>Didengar dengan Empati</strong
             ><small>Tanggapan yang positif dan suportif.</small>
           </div>
         </div>
         <div class="trust">
-          <span class="iconbox">♙</span>
+          <span class="iconbox" data-ui-icon="shield"></span>
           <div>
             <strong>Tanpa Login</strong
             ><small>Cukup simpan kode akses ceritamu.</small>
@@ -161,5 +157,6 @@
       </div>
     </footer>
     <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/icons.js"></script>
   </body>
 </html>
