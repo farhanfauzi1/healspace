@@ -1687,3 +1687,24 @@ body {
         font-size: .6rem
     }
 }
+
+/* ===== Perbaikan sambungan gambar hero (fade ke panel biru) ===== */
+.hero-unisex .hero-art-unisex {
+    overflow: hidden
+}
+
+.hero-people {
+    object-fit: cover;
+    object-position: 18% center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, .55) 12%, #000 28%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, .55) 12%, #000 28%)
+}
+
+/* Mobile: gambar ada di bawah teks, jadi fade-nya dari atas */
+@media(max-width:750px) {
+    .hero-people {
+        object-position: 25% center;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%);
+        mask-image: linear-gradient(to bottom, transparent 0%, #000 22%)
+    }
+}
